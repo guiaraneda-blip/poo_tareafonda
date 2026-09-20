@@ -1,21 +1,49 @@
 package cl.dsy1102.fonda;
 
-/**
- * Punto de entrada de la Tarea Fiestas Patrias - Fonda San Belarmino.
- *
- * Revisa el enunciado en README.md. Debes crear, en este mismo paquete,
- * las clases del diagrama: Bebida, BebidaAlcoholica, BebidaSinAlcohol,
- * la interfaz ConsumoResponsable y la clase GestorFonda.
- */
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
-        // TODO 1: instanciar las cuatro bebidas con los datos del enunciado.
-        // TODO 2: marcar la bebida alcoholica 'Chicha' con la venta restringida.
-        // TODO 3: registrarlas todas en el gestor.
-        // TODO 4: solicitar las cuatro ventas indicadas en el enunciado.
-        // TODO 5: buscar por nombre "Chicha" y listar todas las bebidas.
 
-        System.out.println("Proyecto listo. Comienza por la clase Bebida.");
+
+        GestorFonda gestor = new GestorFonda();
+
+        System.out.println("=== 1. REGISTRO DE BEBIDAS ===");
+
+        BebidaAlcoholica piscoSour = new BebidaAlcoholica("Pisco Sour", 350, 10, 15.0, true, false);
+        BebidaAlcoholica chicha = new BebidaAlcoholica("Chicha", 500, 8, 12.0, true, false);
+        BebidaSinAlcohol mote = new BebidaSinAlcohol("Mote con Huesillo", 500, 15, 85);
+
+        chicha.restringirVenta();
+
+        gestor.registrarBebida(piscoSour);
+        gestor.registrarBebida(chicha);
+        gestor.registrarBebida(mote);
+
+        System.out.println("\n=== 2. PRUEBAS DE VENTA EN ORDEN ===");
+
+
+        gestor.vender("Pisco Sour", 2);
+
+
+        gestor.vender("Pisco Sour", 5);
+        gestor.vender("Chicha", 1);
+        gestor.vender("Mote con Huesillo", 6);
+
+        System.out.println("\n=== 3. BÚSQUEDA POR NOMBRE ===");
+
+
+        List<Bebida> busqueda = gestor.buscarPorNombre("Pisco");
+        for (Bebida b : busqueda) {
+            System.out.println(b.obtenerDetalle());
+        }
+
+        System.out.println("\n=== 4. LISTADO GENERAL===");
+
+
+        for (Bebida b : gestor.obtenerTodas()) {
+            System.out.println(b);
+        }
     }
 }
