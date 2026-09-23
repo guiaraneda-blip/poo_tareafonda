@@ -12,21 +12,21 @@ public class Main {
         System.out.println("=== 1. REGISTRO DE BEBIDAS ===");
 
         BebidaAlcoholica piscoSour = new BebidaAlcoholica("Pisco Sour", 350, 10, 15.0, true, false);
-        BebidaAlcoholica chicha = new BebidaAlcoholica("Chicha", 500, 8, 12.0, true, false);
+        BebidaAlcoholica chicha1 = new BebidaAlcoholica("Chicha", 500, 8, 12.0, true, false);
         BebidaSinAlcohol mote = new BebidaSinAlcohol("Mote con Huesillo", 500, 15, 85);
+        BebidaSinAlcohol chicha2 = new BebidaSinAlcohol("Chicha", 1000, 60, 95 );
 
-        chicha.restringirVenta();
+        chicha1.restringirVenta();
 
         gestor.registrarBebida(piscoSour);
-        gestor.registrarBebida(chicha);
+        gestor.registrarBebida(chicha1);
         gestor.registrarBebida(mote);
+        gestor.registrarBebida(chicha2);
 
         System.out.println("\n=== 2. PRUEBAS DE VENTA EN ORDEN ===");
 
 
         gestor.vender("Pisco Sour", 2);
-
-
         gestor.vender("Pisco Sour", 5);
         gestor.vender("Chicha", 1);
         gestor.vender("Mote con Huesillo", 6);

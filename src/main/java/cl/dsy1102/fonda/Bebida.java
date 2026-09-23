@@ -1,6 +1,6 @@
 package cl.dsy1102.fonda;
 
-public  abstract class Bebida {
+public abstract class Bebida {
     String nombre;
     int volumenML;
     int stock;
@@ -54,7 +54,7 @@ public  abstract class Bebida {
 
     @Override
     public String toString(){
-        return "Nombre: " + nombre + "Volumen en ML: " + volumenML;
+        return "Nombre: " + nombre + " Volumen en ML: " + volumenML;
     }
 
 
