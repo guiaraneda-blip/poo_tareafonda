@@ -1,10 +1,10 @@
 package cl.dsy1102.fonda;
 
 public class BebidaAlcoholica extends Bebida implements ConsumoResponsable{
-    int LIMITE_UNIDADES_POR_CLIENTE = 3;
-    double gradosAlcohol;
-    boolean certificada;
-    boolean ventaRestringida;
+    protected int LIMITE_UNIDADES_POR_CLIENTE = 3;
+    protected double gradosAlcohol;
+    protected boolean certificada;
+    protected boolean ventaRestringida;
 
 
     public BebidaAlcoholica(String nombre, int volumenML, int stock, double gradosAlcohol, boolean certificada, boolean ventaRestringida) {

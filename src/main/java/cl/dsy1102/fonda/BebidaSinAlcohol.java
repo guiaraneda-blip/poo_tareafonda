@@ -2,7 +2,7 @@ package cl.dsy1102.fonda;
 
 public class BebidaSinAlcohol extends Bebida{
 
-    int azucarPorLitro;
+    protected int azucarPorLitro;
 
     public BebidaSinAlcohol(String nombre, int volumenML, int stock, int azucarPorLitro){
         super(nombre, volumenML, stock);

@@ -1,9 +1,9 @@
 package cl.dsy1102.fonda;
 
 public abstract class Bebida {
-    String nombre;
-    int volumenML;
-    int stock;
+   protected String nombre;
+   protected int volumenML;
+   protected int stock;
 
 
     public Bebida(String nombre, int volumenML, int stock){
